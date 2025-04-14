@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ScrollToAsyncTest.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Background="DarkGray">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label
+            Background="DarkGreen"
+            HorizontalTextAlignment="Center"
+            Text="MakeVisible Test"
+            TextColor="White" />
+
+        <Button
+            Grid.Row="1"
+            Margin="10"
+            BackgroundColor="OrangeRed"
+            Clicked="Button_OnClicked"
+            HorizontalOptions="Center"
+            Text="Scroll to Button66: MakeVisible"
+            TextColor="White"
+            VerticalOptions="Center" />
+
+        <ScrollView x:Name="TestScrollView" Grid.Row="2">
+            <StackLayout>
+                <!--  Make top 300 to ensure scroll up is available  -->
+
+                <Grid
+                    Padding="10,300,10,0"
+                    ColumnDefinitions="*,*,*,*,*"
+                    ColumnSpacing="5"
+                    RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*"
+                    RowSpacing="5">
+                    <Button
+                        x:Name="Button1"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        BackgroundColor="#E6F3FF"
+                        Text="1"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button2"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BackgroundColor="#E6F3FF"
+                        Text="2"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button3"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        BackgroundColor="#E6F3FF"
+                        Text="3"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button4"
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        BackgroundColor="#E6F3FF"
+                        Text="4"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button5"
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        BackgroundColor="#E6F3FF"
+                        Text="5"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button6"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        BackgroundColor="#FFF5E6"
+                        Text="6"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button7"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        BackgroundColor="#FFF5E6"
+                        Text="7"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button8"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        BackgroundColor="#FFF5E6"
+                        Text="8"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button9"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        BackgroundColor="#FFF5E6"
+                        Text="9"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button10"
+                        Grid.Row="1"
+                        Grid.Column="4"
+                        BackgroundColor="#FFF5E6"
+                        Text="10"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button11"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        BackgroundColor="#E6FFE6"
+                        Text="11"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button12"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        BackgroundColor="#E6FFE6"
+                        Text="12"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button13"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        BackgroundColor="#E6FFE6"
+                        Text="13"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button14"
+                        Grid.Row="2"
+                        Grid.Column="3"
+                        BackgroundColor="#E6FFE6"
+                        Text="14"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button15"
+                        Grid.Row="2"
+                        Grid.Column="4"
+                        BackgroundColor="#E6FFE6"
+                        Text="15"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button16"
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        BackgroundColor="#FFE6F3"
+                        Text="16"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button17"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        BackgroundColor="#FFE6F3"
+                        Text="17"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button18"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                        BackgroundColor="#FFE6F3"
+                        Text="18"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button19"
+                        Grid.Row="3"
+                        Grid.Column="3"
+                        BackgroundColor="#FFE6F3"
+                        Text="19"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button20"
+                        Grid.Row="3"
+                        Grid.Column="4"
+                        BackgroundColor="#FFE6F3"
+                        Text="20"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button21"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        BackgroundColor="#F3E6FF"
+                        Text="21"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button22"
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        BackgroundColor="#F3E6FF"
+                        Text="22"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button23"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        BackgroundColor="#F3E6FF"
+                        Text="23"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button24"
+                        Grid.Row="4"
+                        Grid.Column="3"
+                        BackgroundColor="#F3E6FF"
+                        Text="24"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button25"
+                        Grid.Row="4"
+                        Grid.Column="4"
+                        BackgroundColor="#F3E6FF"
+                        Text="25"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button26"
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        BackgroundColor="#E6F3FF"
+                        Text="26"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button27"
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        BackgroundColor="#E6F3FF"
+                        Text="27"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button28"
+                        Grid.Row="5"
+                        Grid.Column="2"
+                        BackgroundColor="#E6F3FF"
+                        Text="28"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button29"
+                        Grid.Row="5"
+                        Grid.Column="3"
+                        BackgroundColor="#E6F3FF"
+                        Text="29"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button30"
+                        Grid.Row="5"
+                        Grid.Column="4"
+                        BackgroundColor="#E6F3FF"
+                        Text="30"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button31"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        BackgroundColor="#FFF5E6"
+                        Text="31"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button32"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        BackgroundColor="#FFF5E6"
+                        Text="32"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button33"
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        BackgroundColor="#FFF5E6"
+                        Text="33"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button34"
+                        Grid.Row="6"
+                        Grid.Column="3"
+                        BackgroundColor="#FFF5E6"
+                        Text="34"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button35"
+                        Grid.Row="6"
+                        Grid.Column="4"
+                        BackgroundColor="#FFF5E6"
+                        Text="35"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button36"
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        BackgroundColor="#E6FFE6"
+                        Text="36"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button37"
+                        Grid.Row="7"
+                        Grid.Column="1"
+                        BackgroundColor="#E6FFE6"
+                        Text="37"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button38"
+                        Grid.Row="7"
+                        Grid.Column="2"
+                        BackgroundColor="#E6FFE6"
+                        Text="38"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button39"
+                        Grid.Row="7"
+                        Grid.Column="3"
+                        BackgroundColor="#E6FFE6"
+                        Text="39"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button40"
+                        Grid.Row="7"
+                        Grid.Column="4"
+                        BackgroundColor="#E6FFE6"
+                        Text="40"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button41"
+                        Grid.Row="8"
+                        Grid.Column="0"
+                        BackgroundColor="#FFE6F3"
+                        Text="41"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button42"
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        BackgroundColor="#FFE6F3"
+                        Text="42"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button43"
+                        Grid.Row="8"
+                        Grid.Column="2"
+                        BackgroundColor="#FFE6F3"
+                        Text="43"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button44"
+                        Grid.Row="8"
+                        Grid.Column="3"
+                        BackgroundColor="#FFE6F3"
+                        Text="44"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button45"
+                        Grid.Row="8"
+                        Grid.Column="4"
+                        BackgroundColor="#FFE6F3"
+                        Text="45"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button46"
+                        Grid.Row="9"
+                        Grid.Column="0"
+                        BackgroundColor="#F3E6FF"
+                        Text="46"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button47"
+                        Grid.Row="9"
+                        Grid.Column="1"
+                        BackgroundColor="#F3E6FF"
+                        Text="47"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button48"
+                        Grid.Row="9"
+                        Grid.Column="2"
+                        BackgroundColor="#F3E6FF"
+                        Text="48"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button49"
+                        Grid.Row="9"
+                        Grid.Column="3"
+                        BackgroundColor="#F3E6FF"
+                        Text="49"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button50"
+                        Grid.Row="9"
+                        Grid.Column="4"
+                        BackgroundColor="#F3E6FF"
+                        Text="50"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button51"
+                        Grid.Row="10"
+                        Grid.Column="0"
+                        BackgroundColor="#E6F3FF"
+                        Text="51"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button52"
+                        Grid.Row="10"
+                        Grid.Column="1"
+                        BackgroundColor="#E6F3FF"
+                        Text="52"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button53"
+                        Grid.Row="10"
+                        Grid.Column="2"
+                        BackgroundColor="#E6F3FF"
+                        Text="53"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button54"
+                        Grid.Row="10"
+                        Grid.Column="3"
+                        BackgroundColor="#E6F3FF"
+                        Text="54"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button55"
+                        Grid.Row="10"
+                        Grid.Column="4"
+                        BackgroundColor="#E6F3FF"
+                        Text="55"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button56"
+                        Grid.Row="11"
+                        Grid.Column="0"
+                        BackgroundColor="#FFF5E6"
+                        Text="56"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button57"
+                        Grid.Row="11"
+                        Grid.Column="1"
+                        BackgroundColor="#FFF5E6"
+                        Text="57"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button58"
+                        Grid.Row="11"
+                        Grid.Column="2"
+                        BackgroundColor="#FFF5E6"
+                        Text="58"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button59"
+                        Grid.Row="11"
+                        Grid.Column="3"
+                        BackgroundColor="#FFF5E6"
+                        Text="59"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button60"
+                        Grid.Row="11"
+                        Grid.Column="4"
+                        BackgroundColor="#FFF5E6"
+                        Text="60"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button61"
+                        Grid.Row="12"
+                        Grid.Column="0"
+                        BackgroundColor="#E6FFE6"
+                        Text="61"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button62"
+                        Grid.Row="12"
+                        Grid.Column="1"
+                        BackgroundColor="#E6FFE6"
+                        Text="62"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button63"
+                        Grid.Row="12"
+                        Grid.Column="2"
+                        BackgroundColor="#E6FFE6"
+                        Text="63"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button64"
+                        Grid.Row="12"
+                        Grid.Column="3"
+                        BackgroundColor="#E6FFE6"
+                        Text="64"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button65"
+                        Grid.Row="12"
+                        Grid.Column="4"
+                        BackgroundColor="#E6FFE6"
+                        Text="65"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button66"
+                        Grid.Row="13"
+                        Grid.Column="0"
+                        BackgroundColor="#FFE6F3"
+                        Text="66"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button67"
+                        Grid.Row="13"
+                        Grid.Column="1"
+                        BackgroundColor="#FFE6F3"
+                        Text="67"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button68"
+                        Grid.Row="13"
+                        Grid.Column="2"
+                        BackgroundColor="#FFE6F3"
+                        Text="68"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button69"
+                        Grid.Row="13"
+                        Grid.Column="3"
+                        BackgroundColor="#FFE6F3"
+                        Text="69"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button70"
+                        Grid.Row="13"
+                        Grid.Column="4"
+                        BackgroundColor="#FFE6F3"
+                        Text="70"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button71"
+                        Grid.Row="14"
+                        Grid.Column="0"
+                        BackgroundColor="#F3E6FF"
+                        Text="71"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button72"
+                        Grid.Row="14"
+                        Grid.Column="1"
+                        BackgroundColor="#F3E6FF"
+                        Text="72"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button73"
+                        Grid.Row="14"
+                        Grid.Column="2"
+                        BackgroundColor="#F3E6FF"
+                        Text="73"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button74"
+                        Grid.Row="14"
+                        Grid.Column="3"
+                        BackgroundColor="#F3E6FF"
+                        Text="74"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button75"
+                        Grid.Row="14"
+                        Grid.Column="4"
+                        BackgroundColor="#F3E6FF"
+                        Text="75"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button76"
+                        Grid.Row="15"
+                        Grid.Column="0"
+                        BackgroundColor="#E6F3FF"
+                        Text="76"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button77"
+                        Grid.Row="15"
+                        Grid.Column="1"
+                        BackgroundColor="#E6F3FF"
+                        Text="77"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button78"
+                        Grid.Row="15"
+                        Grid.Column="2"
+                        BackgroundColor="#E6F3FF"
+                        Text="78"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button79"
+                        Grid.Row="15"
+                        Grid.Column="3"
+                        BackgroundColor="#E6F3FF"
+                        Text="79"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button80"
+                        Grid.Row="15"
+                        Grid.Column="4"
+                        BackgroundColor="#E6F3FF"
+                        Text="80"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button81"
+                        Grid.Row="16"
+                        Grid.Column="0"
+                        BackgroundColor="#FFF5E6"
+                        Text="81"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button82"
+                        Grid.Row="16"
+                        Grid.Column="1"
+                        BackgroundColor="#FFF5E6"
+                        Text="82"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button83"
+                        Grid.Row="16"
+                        Grid.Column="2"
+                        BackgroundColor="#FFF5E6"
+                        Text="83"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button84"
+                        Grid.Row="16"
+                        Grid.Column="3"
+                        BackgroundColor="#FFF5E6"
+                        Text="84"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button85"
+                        Grid.Row="16"
+                        Grid.Column="4"
+                        BackgroundColor="#FFF5E6"
+                        Text="85"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button86"
+                        Grid.Row="17"
+                        Grid.Column="0"
+                        BackgroundColor="#E6FFE6"
+                        Text="86"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button87"
+                        Grid.Row="17"
+                        Grid.Column="1"
+                        BackgroundColor="#E6FFE6"
+                        Text="87"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button88"
+                        Grid.Row="17"
+                        Grid.Column="2"
+                        BackgroundColor="#E6FFE6"
+                        Text="88"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button89"
+                        Grid.Row="17"
+                        Grid.Column="3"
+                        BackgroundColor="#E6FFE6"
+                        Text="89"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button90"
+                        Grid.Row="17"
+                        Grid.Column="4"
+                        BackgroundColor="#E6FFE6"
+                        Text="90"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button91"
+                        Grid.Row="18"
+                        Grid.Column="0"
+                        BackgroundColor="#FFE6F3"
+                        Text="91"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button92"
+                        Grid.Row="18"
+                        Grid.Column="1"
+                        BackgroundColor="#FFE6F3"
+                        Text="92"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button93"
+                        Grid.Row="18"
+                        Grid.Column="2"
+                        BackgroundColor="#FFE6F3"
+                        Text="93"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button94"
+                        Grid.Row="18"
+                        Grid.Column="3"
+                        BackgroundColor="#FFE6F3"
+                        Text="94"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button95"
+                        Grid.Row="18"
+                        Grid.Column="4"
+                        BackgroundColor="#FFE6F3"
+                        Text="95"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button96"
+                        Grid.Row="19"
+                        Grid.Column="0"
+                        BackgroundColor="#F3E6FF"
+                        Text="96"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button97"
+                        Grid.Row="19"
+                        Grid.Column="1"
+                        BackgroundColor="#F3E6FF"
+                        Text="97"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button98"
+                        Grid.Row="19"
+                        Grid.Column="2"
+                        BackgroundColor="#F3E6FF"
+                        Text="98"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button99"
+                        Grid.Row="19"
+                        Grid.Column="3"
+                        BackgroundColor="#F3E6FF"
+                        Text="99"
+                        TextColor="Black" />
+                    <Button
+                        x:Name="Button100"
+                        Grid.Row="19"
+                        Grid.Column="4"
+                        BackgroundColor="#F3E6FF"
+                        Text="100"
+                        TextColor="Black" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
